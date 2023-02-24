@@ -9,6 +9,8 @@ CURRENT_DIR = os.path.abspath(os.path.dirname(__file__))
 DESCRIPTION = (
     "A storage system for Django that stores uploaded files in both the "
     "database and file system."
+    "Upstream: https://pypi.org/project/django-binary-database-files/ ."
+    "+Python 3.1x."
 )
 
 
@@ -30,7 +32,7 @@ except FileNotFoundError:
     long_description = DESCRIPTION
 
 setup(
-    name="django-binary-database-files",
+    name="django-binary-database-files-dimaqq-py31x",
     version=binary_database_files.__version__,
     description=DESCRIPTION,
     long_description=long_description,
@@ -62,5 +64,5 @@ setup(
         "pip-requirements.txt",
     ),
     tests_require=get_reqs("pip-requirements-test.txt"),
-    python_requires=">=3.6,<3.12",
+    python_requires=">=3.6,<4",
 )

@@ -1,7 +1,8 @@
 #!/usr/bin/env python
 import io
 import os
-from setuptools import setup, find_packages
+
+from setuptools import find_packages, setup
 
 import binary_database_files
 
@@ -9,8 +10,6 @@ CURRENT_DIR = os.path.abspath(os.path.dirname(__file__))
 DESCRIPTION = (
     "A storage system for Django that stores uploaded files in both the "
     "database and file system."
-    "Upstream: https://pypi.org/project/django-binary-database-files/ ."
-    "+Python 3.1x."
 )
 
 
@@ -32,7 +31,7 @@ except FileNotFoundError:
     long_description = DESCRIPTION
 
 setup(
-    name="django-binary-database-files-dimaqq-py31x",
+    name="django-binary-database-files",
     version=binary_database_files.__version__,
     description=DESCRIPTION,
     long_description=long_description,
@@ -48,21 +47,21 @@ setup(
         "License :: OSI Approved :: BSD License",
         "Operating System :: OS Independent",
         "Programming Language :: Python",
-        "Programming Language :: Python :: 3.6",
-        "Programming Language :: Python :: 3.7",
         "Programming Language :: Python :: 3.8",
         "Programming Language :: Python :: 3.9",
         "Programming Language :: Python :: 3.10",
         "Programming Language :: Python :: 3.11",
+        "Programming Language :: Python :: 3.12",
         "Framework :: Django :: 2.2",
         "Framework :: Django :: 3.0",
         "Framework :: Django :: 3.1",
         "Framework :: Django :: 3.2",
         "Framework :: Django :: 4.0",
+        "Framework :: Django :: 5.0",
     ],
     install_requires=get_reqs(
         "pip-requirements.txt",
     ),
     tests_require=get_reqs("pip-requirements-test.txt"),
-    python_requires=">=3.6,<4",
+    python_requires=">=3.6,<3.13",
 )
